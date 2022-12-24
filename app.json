@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "agenda_ifrn",
+    "slug": "agenda_ifrn",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
