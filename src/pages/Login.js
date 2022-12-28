@@ -6,15 +6,11 @@ import {
   View,
   TouchableOpacity,
   Image,
-  SafeAreaView,
 } from "react-native";
 import { Input } from "../components/Input";
 
 export function Login({navigation}) {
   return (
-    /* tipos da navegação para usar 
-    BottomTabNavigator
-    StackNavigator */
     <View style={styles.container}>
       <View style={styles.header}>
         <Image source={require('../img/logo.png')} />
@@ -27,7 +23,7 @@ export function Login({navigation}) {
           <Input placeholder={"Login"} />
           <Input placeholder={"Senha"} />
         </View>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Registrar')}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('RotasTab')}>
           <Text style={styles.textButton}>Entrar</Text>
         </TouchableOpacity>
       </View>

@@ -8,27 +8,26 @@ import {
   Image,
   SafeAreaView,
 } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
 import { RegistrarTarefa } from "./pages/RegistrarTarefa";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { ListarTarefa } from "./pages/ListarTarefa";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Login } from "./pages/Login";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 const Guias = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 export function RoutesStack() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen
         name="Login"
         component={Login}
       />
       <Stack.Screen
-        name="Registrar"
+        name="RotasTab"
         component={Routes}
-        options={{ title: "Registrar Tarefa" }}
       />
     </Stack.Navigator>
   );
@@ -36,7 +35,7 @@ export function RoutesStack() {
 
 export function Routes() {
   return (
-    <Guias.Navigator>
+    <Guias.Navigator screenOptions={{headerShown: false}}>
       <Guias.Screen
         name="Register"
         component={RegistrarTarefa}

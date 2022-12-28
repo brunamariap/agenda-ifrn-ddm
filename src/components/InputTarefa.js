@@ -6,7 +6,7 @@ import { StyleSheet, Text, View, TextInput } from 'react-native';
 export function InputTarefa(props) {
     return (
         <View style={styles.inputArea}>
-            <TextInput placeholder={props.placeholder}/>
+            <TextInput placeholder={props.placeholder} onChangeText={props.onChangeText}/>
         </View>
     )
 }
