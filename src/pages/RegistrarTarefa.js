@@ -36,21 +36,12 @@ export function RegistrarTarefa({ navigation }) {
     };
 
     const response = await AsyncStorage.getItem("@agenda-ddm:tasksIFRN");
-    const previusData = response ? JSON.parse(response) : []; //transforma em JSON
+    const previusData = response ? JSON.parse(response) : [];
 
     const data = [...previusData, newData];
 
     await AsyncStorage.setItem("@agenda-ddm:tasksIFRN", JSON.stringify(data));
     console.log(newData);
-  }
-
-  async function removeContact(id) {
-    const response = await AsyncStorage.getItem("@agenda-ddm:tasksIFRN");
-    const previusData = response ? JSON.parse(response) : []; //converte para json
-
-    const data = previusData.filter((item) => item?.id !== id); // filtra por todos os registros que o id é diferente do id que quero deletar
-    setTasks(data);
-    await AsyncStorage.setItem("@agenda-ddm:tasksIFRN", JSON.stringify(data));
   }
 
   return (

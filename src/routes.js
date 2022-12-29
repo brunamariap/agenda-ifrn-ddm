@@ -39,12 +39,12 @@ export function Routes() {
       <Guias.Screen
         name="Register"
         component={RegistrarTarefa}
-        options={{ title: "Registrar Tarefa" }}
+        options={{ title: "Registrar Tarefa", tabBarIcon: ({}) => <FontAwesome5 name="calendar-check" size={24} color="black" /> }}
       />
       <Guias.Screen
         name="Listar"
         component={ListarTarefa}
-        options={{ title: "Listar Tarefas" }}
+        options={{ title: "Listar Tarefas", tabBarIcon: ({}) => <FontAwesome5 name="list-ul" size={24} color="black" /> }}
       />
     </Guias.Navigator>
   );

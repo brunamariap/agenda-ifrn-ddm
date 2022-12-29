@@ -14,9 +14,6 @@ const Guias = createBottomTabNavigator();
 
 export default function App() {
   return (
-    /* tipos da navegação para usar 
-    BottomTabNavigator
-    StackNavigator */
     <NavigationContainer>
       <StatusBar style='auto' />
       <RoutesStack/>
