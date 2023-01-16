@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { InputTarefa } from "../components/InputTarefa";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import uuid from "react-native-uuid";
+//import Select from "react-select/dist/declarations/src/Select";
 
 export function RegistrarTarefa({ navigation }) {
   const [title, setTitle] = useState("");
@@ -11,6 +12,14 @@ export function RegistrarTarefa({ navigation }) {
   const [date, setDate] = useState("");
   const [numTasks, setNumTasks] = useState(0);
   const [tasks, setTasks] = useState([]);
+
+  /* const setCategory = (selectedOption) => c*/
+  
+  /* const options = [
+    {'value': 'categoria1', 'label': 'Categoria1'},
+    {'value': 'categoria2', 'label': 'Categoria2'},
+    {'value': 'categoria3', 'label': 'Categoria3'},
+  ] */
 
   async function atualizarDados() {
     const response = await AsyncStorage.getItem("@agenda-ddm:tasksIFRN");
@@ -32,6 +41,7 @@ export function RegistrarTarefa({ navigation }) {
       id,
       title,
       description,
+      category,
       date,
     };
 
@@ -53,6 +63,7 @@ export function RegistrarTarefa({ navigation }) {
       <View style={styles.main}>
         <InputTarefa placeholder={"Título"} onChangeText={(title) => setTitle(title)}/>
         <InputTarefa placeholder={"Descrição"} onChangeText={(description) => setDescription(description)}/>
+        {/* <Select options={options} onChange={(cetegoria) => setCategory(categoria)}/> */}
         <InputTarefa placeholder={"Data"} onChangeText={(date) => setDate(date)}/>
 
         <TouchableOpacity style={styles.button} onPress={addTask}>
